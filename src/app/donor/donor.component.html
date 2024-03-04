@@ -90,10 +90,13 @@
 
   <ng-template #progressBlock>
     <ng-container *ngIf="donation.value['status'] === 'in progress'; else successBlock">
-      <!-- Display only dateOfDonation and status for 'in progress' status -->
+      <app-toolbar-link text="Collect Blood" icon="edit"
+      [routerLink]="['/donor/collect-blood/', donorID,doctorID]">
+    </app-toolbar-link>
     </ng-container>
 
     <ng-template #successBlock>
+      <li>Blood Collected By: {{ donation.value['collectedBy'] }}</li>
       <li>Blood Bag Unit No: {{ donation.value['bloodBagUnitNo'] }}</li>
       <li>Blood Bag Segment No: {{ donation.value['bloodBagSegmentNo'] }}</li>
       <li>Quantity: {{ donation.value['quantity'] }}</li>
@@ -112,6 +115,7 @@
     <app-toolbar-link text="Screen Donor" icon="edit"
       [routerLink]="['/donor/screen/', donorID, doctorID, record?.dob]">
     </app-toolbar-link>
+    
     </ng-container>
           </ng-container>
           <div *ngIf="donorRecordObs === undefined">

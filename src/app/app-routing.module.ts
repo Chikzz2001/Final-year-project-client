@@ -24,7 +24,7 @@ import { InsertHospitalComponent } from './admin/InsertHospital.component';
 import { GetStocksBelowThresholdComponent } from './admin/GetStocksBelowThreshold.component';
 import { GeoButtonComponent } from './donor/Geobutton/geo-button.component';
 import { ScreenDonorComponent } from './doctor/screendonor.component';
-
+import { BloodCollectionComponent } from './doctor/bloodcollection.component';
 
 const routes: Routes = [
   {
@@ -114,6 +114,11 @@ const routes: Routes = [
   {
     path: 'donor/screen/:donorId/:doctorId/:dob',
     component: ScreenDonorComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'donor/collect-blood/:donorId/:doctorId',
+    component: BloodCollectionComponent,
     canActivate: [AuthGuard]
   },
   {

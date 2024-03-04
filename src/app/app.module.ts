@@ -38,6 +38,7 @@ import { InsertHospitalComponent } from './admin/InsertHospital.component';
 import { GetStocksBelowThresholdComponent } from './admin/GetStocksBelowThreshold.component';
 import { GeoButtonComponent } from './donor/Geobutton/geo-button.component';
 import { ScreenDonorComponent } from './doctor/screendonor.component';
+import { BloodCollectionComponent } from './doctor/bloodcollection.component';
 
 const components = [
   AppComponent,
@@ -65,7 +66,8 @@ const components = [
   InsertHospitalComponent,
   GetStocksBelowThresholdComponent,
   GeoButtonComponent,
-  ScreenDonorComponent
+  ScreenDonorComponent,
+  BloodCollectionComponent
 ];
 
 const pipes = [

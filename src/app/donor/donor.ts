@@ -17,6 +17,7 @@ export interface DonationDetails {
     quantity: string;
     reason: string;
     screenedBy: string;
+    collectedBy: string;
 }
 
 export interface DonationHistory {
