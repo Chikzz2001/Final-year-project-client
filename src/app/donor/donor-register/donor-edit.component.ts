@@ -150,6 +150,20 @@ export class DonorEditComponent implements OnInit, OnDestroy {
     this.newDonorData = null;
     this.router.navigate(['/', 'admin', this.getAdminUsername()]);
   }
+  
+  public toggleAlert(): void {
+  if (this.isDoctor() && !this.isNew()) {
+    const currentValue = this.form.get('alert')!.value;
+    this.form.get('alert')!.setValue(currentValue === 'true' ? 'false' : 'true');
+  }
+}
+
+public toggleIsDiseased(): void {
+  if (this.isDoctor() && !this.isNew()) {
+    const currentValue = this.form.get('isDiseased')!.value;
+    this.form.get('isDiseased')!.setValue(currentValue === 'true' ? 'false' : 'true');
+  }
+}
 
 
   private setTitle(): void {
