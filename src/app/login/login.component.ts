@@ -60,6 +60,13 @@ export class LoginComponent implements OnInit {
             (err: any) => this.error.message = err.message
           );
         break;
+      case RoleEnum.TECHNICIAN:
+        this.authService.loginTechnicianUser(new HospitalUser(this.role, this.hospitalId, this.username, this.pwd))
+          .subscribe(
+            (res: any) => this.afterSuccessfulLogin(res),
+            (err: any) => this.error.message = err.message
+          );
+        break;
       case RoleEnum.DONOR:
         this.authService.loginDonorUser(new User(this.role, this.username, this.pwd, this.newPwd))
           .subscribe(

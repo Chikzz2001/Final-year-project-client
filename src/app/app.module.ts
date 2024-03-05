@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { DonorComponent } from './donor/donor.component';
 import { DoctorComponent } from './doctor/doctor.component';
+import { TechnicianComponent } from './technician/technician.component';
 import { AuthService } from './core/auth/auth.service';
 import { AuthGuard } from './core/auth/auth.guard';
 import { TokenInterceptorService } from './core/auth/token-interceptor.service';
@@ -39,12 +40,14 @@ import { GetStocksBelowThresholdComponent } from './admin/GetStocksBelowThreshol
 import { GeoButtonComponent } from './donor/Geobutton/geo-button.component';
 import { ScreenDonorComponent } from './doctor/screendonor.component';
 import { BloodCollectionComponent } from './doctor/bloodcollection.component';
+import { BloodTestComponent } from './technician/bloodtest.component';
 
 const components = [
   AppComponent,
   LoginComponent,
   AdminComponent,
   DonorComponent,
+  TechnicianComponent,
   DonorEditComponent,
   DonorHistoryComponent,
   DonorDetailsMedicalEditComponent,
@@ -67,7 +70,8 @@ const components = [
   GetStocksBelowThresholdComponent,
   GeoButtonComponent,
   ScreenDonorComponent,
-  BloodCollectionComponent
+  BloodCollectionComponent,
+  BloodTestComponent
 ];
 
 const pipes = [

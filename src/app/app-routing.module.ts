@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DonorComponent } from './donor/donor.component';
 import { DoctorComponent } from './doctor/doctor.component';
-//import { TechnicianComponent } from './technician/technician.component';
+import { TechnicianComponent } from './technician/technician.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './core/auth/auth.guard';
 import { DonorEditComponent } from './donor/donor-register/donor-edit.component';
@@ -18,13 +18,13 @@ import { DoctorListForAdminComponent } from './admin/doctor-list-for-admin/docto
 import { TechnicianListForAdminComponent } from './admin/technician-list-for-admin/technician-list-for-admin.component';
 import { DonorListForAdminComponent } from './admin/donor-list-for-admin/donor-list-for-admin.component';
 import { DonorListForDoctorComponent } from './doctor/donor-list-for-doctor/donor-list-for-doctor.component';
-//import { ScreeningFormComponent } from './donor/screening-form/screening-form.component';
 import { ViewAllHospitalsComponent } from './admin/ViewAllHospitals.component';
 import { InsertHospitalComponent } from './admin/InsertHospital.component';
 import { GetStocksBelowThresholdComponent } from './admin/GetStocksBelowThreshold.component';
 import { GeoButtonComponent } from './donor/Geobutton/geo-button.component';
 import { ScreenDonorComponent } from './doctor/screendonor.component';
 import { BloodCollectionComponent } from './doctor/bloodcollection.component';
+import { BloodTestComponent } from './technician/bloodtest.component';
 
 const routes: Routes = [
   {
@@ -101,11 +101,11 @@ const routes: Routes = [
     component: DoctorComponent,
     canActivate: [ AuthGuard ]
   },
-   /*{
+   {
     path: 'technician/:technicianId',
     component: TechnicianComponent,
     canActivate: [ AuthGuard ]
-  },*/
+  },
   {
     path: 'doctor/:doctorId/donors',
     component: DonorListForDoctorComponent,
@@ -119,6 +119,11 @@ const routes: Routes = [
   {
     path: 'donor/collect-blood/:donorId/:doctorId',
     component: BloodCollectionComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path : 'technician/:technicianId/bloodbags',
+    component: BloodTestComponent,
     canActivate: [AuthGuard]
   },
   {
