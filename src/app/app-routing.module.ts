@@ -25,6 +25,7 @@ import { GeoButtonComponent } from './donor/Geobutton/geo-button.component';
 import { ScreenDonorComponent } from './doctor/screendonor.component';
 import { BloodCollectionComponent } from './doctor/bloodcollection.component';
 import { BloodTestComponent } from './technician/bloodtest.component';
+import { ReadBloodBagComponent } from './technician/readbloodbag.component';
 
 const routes: Routes = [
   {
@@ -124,6 +125,11 @@ const routes: Routes = [
   {
     path : 'technician/:technicianId/bloodbags',
     component: BloodTestComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path : 'technician/:technicianId/readbloodbag',
+    component: ReadBloodBagComponent,
     canActivate: [AuthGuard]
   },
   {

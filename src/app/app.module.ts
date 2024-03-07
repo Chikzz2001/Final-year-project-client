@@ -32,7 +32,6 @@ import { DoctorListForAdminComponent } from './admin/doctor-list-for-admin/docto
 import { TechnicianListForAdminComponent } from './admin/technician-list-for-admin/technician-list-for-admin.component';
 import { DonorListForAdminComponent } from './admin/donor-list-for-admin/donor-list-for-admin.component';
 import { DonorListForDoctorComponent } from './doctor/donor-list-for-doctor/donor-list-for-doctor.component';
-//import { ScreeningFormComponent } from './donor/screening-form/screening-form.component';
 import { LoadingPipe } from './loading.pipe';
 import { ViewAllHospitalsComponent } from './admin/ViewAllHospitals.component';
 import { InsertHospitalComponent } from './admin/InsertHospital.component';
@@ -41,6 +40,7 @@ import { GeoButtonComponent } from './donor/Geobutton/geo-button.component';
 import { ScreenDonorComponent } from './doctor/screendonor.component';
 import { BloodCollectionComponent } from './doctor/bloodcollection.component';
 import { BloodTestComponent } from './technician/bloodtest.component';
+import { ReadBloodBagComponent } from './technician/readbloodbag.component';
 
 const components = [
   AppComponent,
@@ -71,7 +71,8 @@ const components = [
   GeoButtonComponent,
   ScreenDonorComponent,
   BloodCollectionComponent,
-  BloodTestComponent
+  BloodTestComponent,
+  ReadBloodBagComponent
 ];
 
 const pipes = [
