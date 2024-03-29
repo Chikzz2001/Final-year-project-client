@@ -26,6 +26,9 @@
           <td>{{singleRecord.address}}</td>
           <td>{{singleRecord.phoneNumber}}</td>
           <td>{{singleRecord.emergPhoneNumber}}</td>
+          <td>
+    <button class="btn btn-danger" (click)="deleteDoctor(adminId,singleRecord.registration,'DOC')">Delete</button>
+  </td>
         </tr>
       </tbody>
     </table>
