@@ -6,6 +6,7 @@ import { Observable, Subscription } from 'rxjs';
 import { TechnicianService } from '../../technician/technician.service';
 import { DisplayVal} from '../../donor/donor';
 import {TechnicianViewRecord} from '../../technician/technician';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-technician-list-for-admin',
@@ -27,7 +28,8 @@ export class TechnicianListForAdminComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly technicianService: TechnicianService
+    private readonly technicianService: TechnicianService,
+    private readonly http: HttpClient
   ) { }
 
  ngOnInit(): void {
@@ -54,6 +56,32 @@ export class TechnicianListForAdminComponent implements OnInit, OnDestroy {
     }
     else {
      this.technicianRecords$ = this.technicianService.getTechniciansByHospitalId(3);
+    }
+  }
+  
+  public deleteTechnician(adminId: string, registration: string, role: string): void {
+    const hospitalId = adminId.substring(4, 5);
+    const Id = 'HOSP' + hospitalId +'-'+ role + registration;
+    const userConfirmed = window.confirm(`Are you sure you want to delete ${Id}?`);
+
+    if (userConfirmed) {
+      // If the user confirmed, proceed with sending the HTTP request
+      const url = `http://localhost:3001/${adminId}/delete/${Id}`;
+
+      this.http.delete(url).subscribe(response => {
+        // Handle response if needed
+        console.log('Technician deleted successfully', response);
+        // Alert the user with the HTTP response
+        window.alert('Technician deleted successfully:\n');
+      }, error => {
+        // Handle error if needed
+        console.error('Error in deleting', error);
+        // Alert the user with the error message
+        window.alert('Error deleting technician:\n' + JSON.stringify(error));
+      });
+    } else {
+      // If the user canceled, do nothing
+      console.log('Request canceled');
     }
   }
 }
